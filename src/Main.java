@@ -5,6 +5,6 @@ public class Main {
         JFrame frame = new JFrame("Calculator");
         frame.setVisible(true);
         frame.setSize(40, 40);
-        //TODO: Make size fixed, start adding buttons
+        //TODO: Make size fixed, start adding buttons.
     }
 }
