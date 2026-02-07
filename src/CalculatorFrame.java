@@ -5,6 +5,8 @@ public class CalculatorFrame extends JFrame {
         super("Calculator");
         setVisible(true);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        //TODO: Set fixed height and width, start working on UI buttons
+        setBounds(200, 100, 350, 550);
+        setResizable(false);
+        //TODO: Start working on UI buttons
     }
 }
