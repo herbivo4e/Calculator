@@ -1,12 +1,18 @@
 import javax.swing.*;
+import java.awt.*;
 
-public class CalculatorFrame extends JFrame {
+public class CalculatorFrame {
+    private JFrame frame = new JFrame();
+    private JPanel panel = new JPanel();
+
+
     public CalculatorFrame(){
-        super("Calculator");
-        setVisible(true);
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setBounds(200, 100, 350, 550);
-        setResizable(false);
-        //TODO: Start working on UI buttons
+        frame.setVisible(true);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.add(panel, BorderLayout.CENTER);
+        frame.pack();
+        frame.setTitle("Calculator");
+        frame.setBounds(200, 100, 350, 550);
+        frame.setResizable(false);
     }
 }
