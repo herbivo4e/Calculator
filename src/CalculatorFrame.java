@@ -1,7 +1,9 @@
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
-public class CalculatorFrame {
+public class CalculatorFrame implements ActionListener {
     private JFrame frame = new JFrame();
     private JPanel panel = new JPanel();
     private JButton button1 = new JButton("1");
@@ -35,5 +37,10 @@ public class CalculatorFrame {
         frame.setTitle("Calculator");
         frame.setBounds(200, 100, 350, 550);
         frame.setResizable(false);
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        System.out.println("Hello World!");
     }
 }
