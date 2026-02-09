@@ -4,22 +4,22 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class CalculatorFrame implements ActionListener {
-    private JFrame frame = new JFrame();
-    private JPanel panel = new JPanel();
-    private JButton button1 = new JButton("1");
-    private JButton button2 = new JButton("2");
-    private JButton button3 = new JButton("3");
-    private JButton button4 = new JButton("4");
-    private JButton button5 = new JButton("5");
-    private JButton button6 = new JButton("6");
-    private JButton button7 = new JButton("7");
-    private JButton button8 = new JButton("8");
-    private JButton button9 = new JButton("9");
-    private JButton button0 = new JButton("0");
-    private JButton buttonC = new JButton("C");
-    private JButton buttonEquals = new JButton("=");
-    private JButton buttonAdd = new JButton("+");
-    private JButton buttonSubtract = new JButton("-");
+    private final JFrame frame = new JFrame();
+    private final JPanel panel = new JPanel();
+    private final JButton button1 = new JButton("1");
+    private final JButton button2 = new JButton("2");
+    private final JButton button3 = new JButton("3");
+    private final JButton button4 = new JButton("4");
+    private final JButton button5 = new JButton("5");
+    private final JButton button6 = new JButton("6");
+    private final JButton button7 = new JButton("7");
+    private final JButton button8 = new JButton("8");
+    private final JButton button9 = new JButton("9");
+    private final JButton button0 = new JButton("0");
+    private final JButton buttonC = new JButton("C");
+    private final JButton buttonEquals = new JButton("=");
+    private final JButton buttonAdd = new JButton("+");
+    private final JButton buttonSubtract = new JButton("-");
 
     public CalculatorFrame(){
         panel.setBorder(BorderFactory.createEmptyBorder(80, 30, 10, 30));
