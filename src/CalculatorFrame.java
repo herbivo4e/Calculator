@@ -37,6 +37,7 @@ public class CalculatorFrame implements ActionListener {
         frame.setTitle("Calculator");
         frame.setBounds(200, 100, 350, 550);
         frame.setResizable(false);
+
     }
 
     @Override
