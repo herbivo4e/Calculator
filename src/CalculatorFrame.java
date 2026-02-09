@@ -16,6 +16,10 @@ public class CalculatorFrame implements ActionListener {
     private JButton button8 = new JButton("8");
     private JButton button9 = new JButton("9");
     private JButton button0 = new JButton("0");
+    private JButton buttonC = new JButton("C");
+    private JButton buttonEquals = new JButton("=");
+    private JButton buttonAdd = new JButton("+");
+    private JButton buttonSubtract = new JButton("-");
 
     public CalculatorFrame(){
         panel.setBorder(BorderFactory.createEmptyBorder(80, 30, 10, 30));
@@ -29,6 +33,10 @@ public class CalculatorFrame implements ActionListener {
         panel.add(button8);
         panel.add(button9);
         panel.add(button0);
+        panel.add(buttonC);
+        panel.add(buttonEquals);
+        panel.add(buttonAdd);
+        panel.add(buttonSubtract);
         frame.setVisible(true);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.add(panel, BorderLayout.CENTER);
@@ -36,7 +44,6 @@ public class CalculatorFrame implements ActionListener {
         frame.setTitle("Calculator");
         frame.setBounds(200, 100, 350, 550);
         frame.setResizable(false);
-
     }
 
     @Override
