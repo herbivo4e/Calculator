@@ -17,7 +17,6 @@ public class CalculatorFrame implements ActionListener {
     private JButton button9 = new JButton("9");
     private JButton button0 = new JButton("0");
 
-
     public CalculatorFrame(){
         panel.setBorder(BorderFactory.createEmptyBorder(80, 30, 10, 30));
         panel.add(button1);
