@@ -54,7 +54,6 @@ public class CalculatorFrame implements ActionListener {
         panel.add(buttonDecimalDot);
         panel.add(button0);
         panel.add(buttonChangeSign);
-        panel.add(buttonAdd);
         panel.add(buttonSqrt);
         panel.add(buttonSquare);
         panel.add(buttonFlip);
@@ -90,6 +89,7 @@ public class CalculatorFrame implements ActionListener {
         frame.setTitle("Calculator");
         frame.setBounds(200, 100, 350, 550);
         frame.setResizable(false);
+        //TODO: Add a display, position it and start working on logic
     }
 
     @Override
