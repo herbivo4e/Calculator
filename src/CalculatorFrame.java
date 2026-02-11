@@ -5,7 +5,7 @@ import java.awt.event.ActionListener;
 
 public class CalculatorFrame implements ActionListener {
     private final JFrame frame = new JFrame();
-    private final JPanel panel = new JPanel();
+    private final JPanel panel = new JPanel(new GridLayout(6 , 4));
     private final JButton button1 = new JButton("1");
     private final JButton button2 = new JButton("2");
     private final JButton button3 = new JButton("3");
@@ -48,10 +48,10 @@ public class CalculatorFrame implements ActionListener {
         panel.add(button3);
         panel.add(buttonAdd);
         panel.add(buttonChangeSign);
-        panel.add(button0);
-        panel.add(buttonAdd);
         panel.add(buttonDecimalDot);
+        panel.add(button0);
         panel.add(buttonEquals);
+        panel.add(buttonAdd);
         button1.setBackground(Color.CYAN);
         button2.setBackground(Color.CYAN);
         button3.setBackground(Color.CYAN);
