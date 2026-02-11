@@ -27,6 +27,9 @@ public class CalculatorFrame implements ActionListener {
     private final JButton buttonUndo = new JButton("⌫");
     private final JButton buttonChangeSign = new JButton("+/-");
     private final JButton buttonDecimalDot = new JButton(".");
+    private final JButton buttonSqrt = new JButton("√x");
+    private final JButton buttonSquare = new JButton("x²");
+    private final JButton buttonFlip = new JButton("x⁻¹");
 
     public CalculatorFrame(){
         panel.setBorder(BorderFactory.createEmptyBorder(80, 30, 10, 30));
@@ -47,11 +50,15 @@ public class CalculatorFrame implements ActionListener {
         panel.add(button2);
         panel.add(button3);
         panel.add(buttonAdd);
-        panel.add(buttonChangeSign);
+        panel.add(buttonSubtract);
         panel.add(buttonDecimalDot);
         panel.add(button0);
-        panel.add(buttonEquals);
+        panel.add(buttonChangeSign);
         panel.add(buttonAdd);
+        panel.add(buttonSqrt);
+        panel.add(buttonSquare);
+        panel.add(buttonFlip);
+        panel.add(buttonEquals);
         button1.setBackground(Color.CYAN);
         button2.setBackground(Color.CYAN);
         button3.setBackground(Color.CYAN);
@@ -73,6 +80,9 @@ public class CalculatorFrame implements ActionListener {
         buttonDecimalDot.setBackground(Color.CYAN);
         buttonDivide.setBackground(Color.CYAN);
         buttonMultiply.setBackground(Color.CYAN);
+        buttonSqrt.setBackground(Color.CYAN);
+        buttonSquare.setBackground(Color.CYAN);
+        buttonFlip.setBackground(Color.CYAN);
         frame.setVisible(true);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.add(panel, BorderLayout.CENTER);
