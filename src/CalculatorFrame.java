@@ -5,7 +5,7 @@ import java.awt.event.ActionListener;
 
 public class CalculatorFrame implements ActionListener {
     private final JFrame frame = new JFrame();
-    private final JPanel panel = new JPanel(new GridLayout());
+    private final JPanel panel = new JPanel();
     private final JButton button1 = new JButton("1");
     private final JButton button2 = new JButton("2");
     private final JButton button3 = new JButton("3");
@@ -21,6 +21,8 @@ public class CalculatorFrame implements ActionListener {
     private final JButton buttonEquals = new JButton("=");
     private final JButton buttonAdd = new JButton("+");
     private final JButton buttonSubtract = new JButton("-");
+    private final JButton buttonMultiply = new JButton("*");
+    private final JButton buttonDivide = new JButton(":");
     private final JButton buttonPercent = new JButton("%");
     private final JButton buttonUndo = new JButton("⌫");
     private final JButton buttonChangeSign = new JButton("+/-");
@@ -29,25 +31,27 @@ public class CalculatorFrame implements ActionListener {
     public CalculatorFrame(){
         panel.setBorder(BorderFactory.createEmptyBorder(80, 30, 10, 30));
         panel.setBackground(Color.BLUE);
-        panel.add(button1);
-        panel.add(button2);
-        panel.add(button3);
-        panel.add(button4);
-        panel.add(button5);
-        panel.add(button6);
+        panel.add(buttonPercent);
+        panel.add(buttonCE);
+        panel.add(buttonC);
+        panel.add(buttonUndo);
         panel.add(button7);
         panel.add(button8);
         panel.add(button9);
-        panel.add(button0);
-        panel.add(buttonC);
-        panel.add(buttonEquals);
+        panel.add(buttonDivide);
+        panel.add(button4);
+        panel.add(button5);
+        panel.add(button6);
+        panel.add(buttonMultiply);
+        panel.add(button1);
+        panel.add(button2);
+        panel.add(button3);
         panel.add(buttonAdd);
-        panel.add(buttonSubtract);
-        panel.add(buttonCE);
-        panel.add(buttonPercent);
-        panel.add(buttonUndo);
         panel.add(buttonChangeSign);
+        panel.add(button0);
+        panel.add(buttonAdd);
         panel.add(buttonDecimalDot);
+        panel.add(buttonEquals);
         button1.setBackground(Color.CYAN);
         button2.setBackground(Color.CYAN);
         button3.setBackground(Color.CYAN);
@@ -67,6 +71,8 @@ public class CalculatorFrame implements ActionListener {
         buttonUndo.setBackground(Color.CYAN);
         buttonChangeSign.setBackground(Color.CYAN);
         buttonDecimalDot.setBackground(Color.CYAN);
+        buttonDivide.setBackground(Color.CYAN);
+        buttonMultiply.setBackground(Color.CYAN);
         frame.setVisible(true);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.add(panel, BorderLayout.CENTER);
