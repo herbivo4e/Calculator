@@ -6,6 +6,7 @@ import java.awt.event.ActionListener;
 public class CalculatorFrame implements ActionListener {
     private final JFrame frame = new JFrame();
     private final JPanel panel = new JPanel(new GridLayout(6 , 4));
+    private final JTextField display = new JTextField();
     private final JButton button1 = new JButton("1");
     private final JButton button2 = new JButton("2");
     private final JButton button3 = new JButton("3");
@@ -89,7 +90,7 @@ public class CalculatorFrame implements ActionListener {
         frame.setTitle("Calculator");
         frame.setBounds(200, 100, 350, 550);
         frame.setResizable(false);
-        //TODO: Add a display, position it and start working on logic
+        //TODO: Fix display positioning
     }
 
     @Override
