@@ -5,8 +5,11 @@ import java.awt.event.ActionListener;
 
 public class CalculatorFrame implements ActionListener {
     private final JFrame frame = new JFrame();
-    private final JPanel panel = new JPanel(new GridLayout(6 , 4));
+    private final JPanel panel = new JPanel(new GridLayout(6, 4));
+    private final JPanel displayPanel = new JPanel(new BorderLayout());
     private final JTextField display = new JTextField();
+    private final Font displayFont = new Font("SansSerif", Font.BOLD, 40);
+    private final Font buttonFont = new Font("SansSerif", Font.BOLD, 20);
     private final JButton button1 = new JButton("1");
     private final JButton button2 = new JButton("2");
     private final JButton button3 = new JButton("3");
@@ -32,8 +35,8 @@ public class CalculatorFrame implements ActionListener {
     private final JButton buttonSquare = new JButton("x²");
     private final JButton buttonFlip = new JButton("x⁻¹");
 
-    public CalculatorFrame(){
-        panel.setBorder(BorderFactory.createEmptyBorder(80, 30, 10, 30));
+    public CalculatorFrame() {
+        panel.setBorder(BorderFactory.createEmptyBorder(40, 30, 10, 30));
         panel.setBackground(Color.BLUE);
         panel.add(buttonPercent);
         panel.add(buttonCE);
@@ -90,7 +93,10 @@ public class CalculatorFrame implements ActionListener {
         frame.setTitle("Calculator");
         frame.setBounds(200, 100, 350, 550);
         frame.setResizable(false);
-        //TODO: Fix display positioning
+        frame.add(displayPanel, BorderLayout.NORTH);
+        display.setBackground(Color.GRAY);
+        displayPanel.add(display);
+        display.setFont(displayFont);
     }
 
     @Override
