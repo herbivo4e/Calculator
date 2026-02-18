@@ -57,10 +57,17 @@ public class CalculatorFrame implements ActionListener {
         display.setBackground(Color.GRAY);
         displayPanel.add(display);
         display.setFont(displayFont);
+        for (JButton b : numberButtons){
+            b.addActionListener(this);
+        }
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        System.out.println("Hello World!");
+        float logicState = 0;
+        if (button1.isSelected()){
+            logicState =+ 1;
+            display.setText("1");
+        }
     }
 }
