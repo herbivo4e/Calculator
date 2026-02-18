@@ -64,10 +64,9 @@ public class CalculatorFrame implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        float logicState = 0;
-        if (button1.isSelected()){
-            logicState =+ 1;
-            display.setText("1");
-        }
+    if (e.getActionCommand().equals("1")){
+        display.setText("1");
+    }
     }
 }
+
