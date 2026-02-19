@@ -64,9 +64,14 @@ public class CalculatorFrame implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-    if (e.getActionCommand().equals("1")){
+        float state = 0;
+    if (e.getActionCommand().equals("1") || state == 0){
         display.setText("1");
+        state = 1;
+    } else if (e.getActionCommand().equals("1") || state != 0){
+        state += 11;
     }
+
     }
 }
 
