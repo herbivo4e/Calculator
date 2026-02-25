@@ -37,6 +37,10 @@ public class CalculatorFrame implements ActionListener {
     private final JButton[] numberButtons = {button0, button1, button2, button3, button4, button5, button6, button7, button8, button9};
     private final JButton[] operationButtons = {buttonC, buttonCE, buttonEquals, buttonAdd, buttonSubtract, buttonMultiply, buttonDivide, buttonPercent, buttonUndo, buttonChangeSign, buttonDecimalDot, buttonSqrt, buttonSquare, buttonFlip};
     private final JButton[] orderedButtons = {buttonPercent, buttonCE, buttonC, buttonUndo, button7, button8, button9, buttonDivide, button4, button5, button6, buttonMultiply, button1, button2, button3, buttonAdd, buttonSubtract, buttonDecimalDot, button0, buttonChangeSign, buttonAdd, buttonSqrt, buttonSquare, buttonFlip, buttonEquals };
+    double firstNumber = 0;
+    double secondNumber = 0;
+    char operator = ' ';
+    boolean secondNumberIsBeingTyped = false;
 
     public CalculatorFrame() {
         panel.setBorder(BorderFactory.createEmptyBorder(40, 30, 10, 30));
@@ -64,10 +68,12 @@ public class CalculatorFrame implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        float state = 0;
-    if (e.getActionCommand().equals("1")){
-        System.out.println("nothing");
-    }
+        if (secondNumberIsBeingTyped) {
+            display.setText(e.getActionCommand());
+            secondNumberIsBeingTyped = false;
+        } else {
+            display.setText(display.getText() + e.getActionCommand());
+        }
     }
 }
 
