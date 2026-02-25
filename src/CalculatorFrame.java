@@ -71,32 +71,36 @@ public class CalculatorFrame implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        if (secondNumberIsBeingTyped) {
-            display.setText(e.getActionCommand());
-            secondNumberIsBeingTyped = false;
+        if (Character.isDigit(e.getActionCommand().charAt(0))) {
+            if (secondNumberIsBeingTyped) {
+                display.setText(e.getActionCommand());
+                secondNumberIsBeingTyped = false;
+            } else {
+                display.setText(display.getText() + e.getActionCommand());
+            }
         } else {
-            display.setText(display.getText() + e.getActionCommand());
-        }
-        if (e.getActionCommand().equals("+") || e.getActionCommand().equals("-") || e.getActionCommand().equals("*") || e.getActionCommand().equals(":")) {
-            secondNumberIsBeingTyped = true;
-            operator = e.getActionCommand().charAt(0);
-            firstNumber = Double.parseDouble(display.getText());
-        } else if (e.getActionCommand().equals("=")) {
-            secondNumber = Double.parseDouble(display.getText());
-            secondNumberIsBeingTyped = true;
-            switch (operator) {
-                case '+':
-                    display.setText(String.valueOf(firstNumber + secondNumber));
-                    break;
-                case '-':
-                    display.setText(String.valueOf(firstNumber - secondNumber));
-                    break;
-                case '*':
-                    display.setText(String.valueOf(firstNumber * secondNumber));
-                    break;
-                case ':':
-                    display.setText(String.valueOf(firstNumber / secondNumber));
-                    break;
+
+            if (e.getActionCommand().equals("+") || e.getActionCommand().equals("-") || e.getActionCommand().equals("*") || e.getActionCommand().equals(":")) {
+                secondNumberIsBeingTyped = true;
+                operator = e.getActionCommand().charAt(0);
+                firstNumber = Double.parseDouble(display.getText());
+            } else if (e.getActionCommand().equals("=")) {
+                secondNumber = Double.parseDouble(display.getText());
+                secondNumberIsBeingTyped = true;
+                switch (operator) {
+                    case '+':
+                        display.setText(String.valueOf(firstNumber + secondNumber));
+                        break;
+                    case '-':
+                        display.setText(String.valueOf(firstNumber - secondNumber));
+                        break;
+                    case '*':
+                        display.setText(String.valueOf(firstNumber * secondNumber));
+                        break;
+                    case ':':
+                        display.setText(String.valueOf(firstNumber / secondNumber));
+                        break;
+                }
             }
         }
     }
