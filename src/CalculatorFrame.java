@@ -36,7 +36,7 @@ public class CalculatorFrame implements ActionListener {
     private final JButton buttonFlip = new JButton("x⁻¹");
     private final JButton[] numberButtons = {button0, button1, button2, button3, button4, button5, button6, button7, button8, button9};
     private final JButton[] operationButtons = {buttonC, buttonCE, buttonEquals, buttonAdd, buttonSubtract, buttonMultiply, buttonDivide, buttonPercent, buttonUndo, buttonChangeSign, buttonDecimalDot, buttonSqrt, buttonSquare, buttonFlip};
-    private final JButton[] orderedButtons = {buttonPercent, buttonCE, buttonC, buttonUndo, button7, button8, button9, buttonDivide, button4, button5, button6, buttonMultiply, button1, button2, button3, buttonAdd, buttonSubtract, buttonDecimalDot, button0, buttonChangeSign, buttonAdd, buttonSqrt, buttonSquare, buttonFlip, buttonEquals };
+    private final JButton[] orderedButtons = {buttonPercent, buttonCE, buttonC, buttonUndo, button7, button8, button9, buttonDivide, button4, button5, button6, buttonMultiply, button1, button2, button3, buttonAdd, buttonSubtract, buttonDecimalDot, button0, buttonChangeSign, buttonAdd, buttonSqrt, buttonSquare, buttonFlip, buttonEquals};
     double firstNumber = 0;
     double secondNumber = 0;
     char operator = ' ';
@@ -45,7 +45,7 @@ public class CalculatorFrame implements ActionListener {
     public CalculatorFrame() {
         panel.setBorder(BorderFactory.createEmptyBorder(40, 30, 10, 30));
         panel.setBackground(Color.BLUE);
-        for (JButton b : orderedButtons){
+        for (JButton b : orderedButtons) {
             panel.add(b);
             b.setFont(buttonFont);
             b.setBackground(Color.CYAN);
@@ -61,7 +61,10 @@ public class CalculatorFrame implements ActionListener {
         display.setBackground(Color.GRAY);
         displayPanel.add(display);
         display.setFont(displayFont);
-        for (JButton b : numberButtons){
+        for (JButton b : numberButtons) {
+            b.addActionListener(this);
+        }
+        for (JButton b : operationButtons) {
             b.addActionListener(this);
         }
     }
@@ -73,6 +76,28 @@ public class CalculatorFrame implements ActionListener {
             secondNumberIsBeingTyped = false;
         } else {
             display.setText(display.getText() + e.getActionCommand());
+        }
+        if (e.getActionCommand().equals("+") || e.getActionCommand().equals("-") || e.getActionCommand().equals("*") || e.getActionCommand().equals(":")) {
+            secondNumberIsBeingTyped = true;
+            operator = e.getActionCommand().charAt(0);
+            firstNumber = Double.parseDouble(display.getText());
+        } else if (e.getActionCommand().equals("=")) {
+            secondNumber = Double.parseDouble(display.getText());
+            secondNumberIsBeingTyped = true;
+            switch (operator) {
+                case '+':
+                    display.setText(String.valueOf(firstNumber + secondNumber));
+                    break;
+                case '-':
+                    display.setText(String.valueOf(firstNumber - secondNumber));
+                    break;
+                case '*':
+                    display.setText(String.valueOf(firstNumber * secondNumber));
+                    break;
+                case ':':
+                    display.setText(String.valueOf(firstNumber / secondNumber));
+                    break;
+            }
         }
     }
 }
