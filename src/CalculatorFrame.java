@@ -110,25 +110,22 @@ public class CalculatorFrame implements ActionListener {
                 operator = ' ';
                 display.setText("0");
                 secondNumberIsBeingTyped = false;
-            }
-
-            else if (e.getActionCommand().equals("⌫")) {
+            } else if (e.getActionCommand().equals("⌫")) {
                 if (display.getText().length() != 1) {
                     display.setText(display.getText().substring(0, display.getText().length() - 1));
                 } else {
                     display.setText("0");
                 }
-            }
-            else if (e.getActionCommand().equals("√x")) {
-                    display.setText(String.valueOf(Math.sqrt(Double.parseDouble(display.getText()))));
-                }
-            else if (e.getActionCommand().equals("x²")){
+            } else if (e.getActionCommand().equals("√x")) {
+                display.setText(String.valueOf(Math.sqrt(Double.parseDouble(display.getText()))));
+            } else if (e.getActionCommand().equals("x²")) {
                 display.setText(String.valueOf(Math.pow(Double.parseDouble(display.getText()), 2)));
-            }
-            else if (e.getActionCommand().equals("x⁻¹")){
+            } else if (e.getActionCommand().equals("x⁻¹")) {
                 display.setText(String.valueOf(1 / Double.parseDouble(display.getText())));
+            } else if (e.getActionCommand().equals("+/-")) {
+                display.setText(String.valueOf(-1 * Double.parseDouble(display.getText())));
             }
-
+            //TODO: Percent and decimal
         }
     }
 }
