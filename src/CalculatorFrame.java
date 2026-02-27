@@ -61,6 +61,7 @@ public class CalculatorFrame implements ActionListener {
         display.setBackground(Color.GRAY);
         displayPanel.add(display);
         display.setFont(displayFont);
+        display.setText("0");
         for (JButton b : numberButtons) {
             b.addActionListener(this);
         }
@@ -72,7 +73,7 @@ public class CalculatorFrame implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         if (Character.isDigit(e.getActionCommand().charAt(0))) {
-            if (secondNumberIsBeingTyped) {
+            if (secondNumberIsBeingTyped || display.getText().equals("0")) {
                 display.setText(e.getActionCommand());
                 secondNumberIsBeingTyped = false;
             } else {
@@ -101,8 +102,17 @@ public class CalculatorFrame implements ActionListener {
                         display.setText(String.valueOf(firstNumber / secondNumber));
                         break;
                 }
+            } else if (e.getActionCommand().equals("CE")){
+                secondNumberIsBeingTyped = true;
+                display.setText("0");
+            } else if (e.getActionCommand().equals("C")){
+                firstNumber = 0;
+                operator = ' ';
+                display.setText("0");
+                secondNumberIsBeingTyped = false;
             }
         }
     }
 }
+
 
