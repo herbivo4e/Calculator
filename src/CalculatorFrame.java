@@ -120,14 +120,14 @@ public class CalculatorFrame implements ActionListener {
                 }
             }
             else if (e.getActionCommand().equals("√x")) {
-                if (secondNumberIsBeingTyped) {
                     display.setText(String.valueOf(Math.sqrt(Double.parseDouble(display.getText()))));
-                } else{
-                    secondNumber = Math.sqrt(secondNumber);
-                    display.setText(String.valueOf(secondNumber));
                 }
+            else if (e.getActionCommand().equals("x²")){
+                display.setText(String.valueOf(Math.pow(Double.parseDouble(display.getText()), 2)));
             }
-            //TODO: fix sqrt
+            else if (e.getActionCommand().equals("x⁻¹")){
+                display.setText(String.valueOf(1 / Double.parseDouble(display.getText())));
+            }
 
         }
     }
