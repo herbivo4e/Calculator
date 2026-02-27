@@ -102,17 +102,34 @@ public class CalculatorFrame implements ActionListener {
                         display.setText(String.valueOf(firstNumber / secondNumber));
                         break;
                 }
-            } else if (e.getActionCommand().equals("CE")){
+            } else if (e.getActionCommand().equals("CE")) {
                 secondNumberIsBeingTyped = true;
                 display.setText("0");
-            } else if (e.getActionCommand().equals("C")){
+            } else if (e.getActionCommand().equals("C")) {
                 firstNumber = 0;
                 operator = ' ';
                 display.setText("0");
                 secondNumberIsBeingTyped = false;
             }
+
+            else if (e.getActionCommand().equals("⌫")) {
+                if (display.getText().length() != 1) {
+                    display.setText(display.getText().substring(0, display.getText().length() - 1));
+                } else {
+                    display.setText("0");
+                }
+            }
+            else if (e.getActionCommand().equals("√x")) {
+                if (secondNumberIsBeingTyped) {
+                    display.setText(String.valueOf(Math.sqrt(Double.parseDouble(display.getText()))));
+                } else{
+                    secondNumber = Math.sqrt(secondNumber);
+                    display.setText(String.valueOf(secondNumber));
+                }
+            }
+            //TODO: fix sqrt
+
         }
     }
 }
-
 
