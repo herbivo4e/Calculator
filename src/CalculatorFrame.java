@@ -126,9 +126,14 @@ public class CalculatorFrame implements ActionListener {
                 display.setText(String.valueOf(-1 * Double.parseDouble(display.getText())));
             } else if (e.getActionCommand().equals(".") && !display.getText().contains(".")) {
                 display.setText(display.getText() + ".");
+            } else if (e.getActionCommand().equals("%")) {
+                if (secondNumberIsBeingTyped) {
+                    display.setText(String.valueOf((Double.parseDouble(display.getText()) / 100) * firstNumber));
+                } else {
+                    display.setText(String.valueOf(Double.parseDouble(display.getText()) / 100));
+                }
             }
-
         }
     }
 }
-
+//TODO: turn of the ability to write on display, if an operation is performed on integers, the result should aslo be an integer
