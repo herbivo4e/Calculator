@@ -124,8 +124,10 @@ public class CalculatorFrame implements ActionListener {
                 display.setText(String.valueOf(1 / Double.parseDouble(display.getText())));
             } else if (e.getActionCommand().equals("+/-")) {
                 display.setText(String.valueOf(-1 * Double.parseDouble(display.getText())));
+            } else if (e.getActionCommand().equals(".") && !display.getText().contains(".")) {
+                display.setText(display.getText() + ".");
             }
-            //TODO: Percent and decimal
+
         }
     }
 }
