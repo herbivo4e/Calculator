@@ -62,6 +62,7 @@ public class CalculatorFrame implements ActionListener {
         displayPanel.add(display);
         display.setFont(displayFont);
         display.setText("0");
+        display.setEditable(false);
         for (JButton b : numberButtons) {
             b.addActionListener(this);
         }
@@ -88,6 +89,7 @@ public class CalculatorFrame implements ActionListener {
             } else if (e.getActionCommand().equals("=")) {
                 secondNumber = Double.parseDouble(display.getText());
                 secondNumberIsBeingTyped = true;
+
                 switch (operator) {
                     case '+':
                         display.setText(String.valueOf(firstNumber + secondNumber));
@@ -136,4 +138,4 @@ public class CalculatorFrame implements ActionListener {
         }
     }
 }
-//TODO: turn of the ability to write on display, if an operation is performed on integers, the result should aslo be an integer
+//TODO: turn of the ability to write on display, if an operation is performed on integers, the result should also be an integer
